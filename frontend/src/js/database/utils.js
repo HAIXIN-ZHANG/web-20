@@ -53,7 +53,8 @@ export const patchData = async (path, data) => {
 };
 
 export const getResourcePath = (pathInfo) => {
-  const dbPath = '3.106.205.83:8001'
+  const dbPath = import.meta.env.VITE_LOCAL_DB_PATH;
+  console.log("getResourcePath", dbPath, pathInfo);
   const protocol = "http://";
 
   return protocol + dbPath + "/api/" + path.join(...pathInfo);
