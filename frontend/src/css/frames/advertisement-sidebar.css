@@ -1,0 +1,20 @@
+.advertisement-sidebar {
+	width: 267px;
+	display: inline-block;
+	border: 1px solid var(--color-border);
+	padding-top: 88px;
+    vertical-align: top;
+}
+
+.advertisement-item {
+	width: 267px;
+	height: 287px;
+	margin-bottom: 40px;
+	border-radius: var(--common-border-radius);
+}
+
+.advertisement-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

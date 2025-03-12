@@ -1,0 +1,6 @@
+.main-content {
+    width: 569px;
+    display: inline-block;
+    border: 1px solid var(--color-border);
+    vertical-align: top;
+}
