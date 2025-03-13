@@ -1,111 +1,137 @@
 .profile-sidebar {
-    width: 284px;
-    display: inline-block;
-    padding: 0 24px;
-    vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
+  /* border: 1px solid #000; */
+
+  width: 284px;
+  height: 900px;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .web-logo {
-    margin-top: 32px;
-    width: 171px;
+  width: 100%;
+  text-align: left;
+  padding-top: 32px;
+  box-sizing: border-box;
 }
 
 .web-logo img {
-    width: 100%;
-}
-
-.profile-information {
-    margin-top: 32px;
-    text-align: left;
+  width: 171px;
 }
 
 .profile-header {
-    display: inline-block;
-    height: 56px;
-    width: 56px;
-    margin-right: 10px;
+  width: 100%;
+  text-align: left;
+  margin-top: 15px;
 }
 
-.profile-header img {
-    width: 100%;
-    height: 100%;
-    /* 头像圆形 */
-    border-radius: 50%;
-    object-fit: cover;
+.profile-avatar {
+  display: inline-block;
+  width: 56px;
+  /* 头像宽度 */
+  height: 56px;
+  /* 头像高度 */
+  border-radius: 50%;
+  /* 头像圆形 */
+  margin-right: 10px;
 }
 
 .profile-identify {
-    display: inline-block;
-    vertical-align: top;
-    padding-top: 4px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  padding-top: 4px;
 }
 
 .profile-name {
-    line-height: 12px;
-    font-size: var(--font-size-medium);
-    color: var(--color-text);
-    margin: 8px 0;
+  font-size: var(--font-size-medium);
+  font-weight: bold;
+  line-height: 16px;
+  margin: 8px 0;
+  /* 姓名上下间距 */
 }
 
 .profile-email {
-    line-height: 12px;
-    font-size: var(--font-size-xsmall);
-    color: var(--color-text-light);
-    margin: 0;
+  font-size: var(--font-size-xsmall);
+  color: var(--color-text-light);
+  line-height: 12px;
+  margin: 0;
 }
 
 .profile-description {
-    font-size: var(--font-size-xsmall);
-    color: var(--color-text-light);
-    text-align: left;
-    margin: 8px 0;
-    line-height: 20px;
+  font-size: var(--font-size-xsmall);
+  text-align: left;
+  color: var(--color-text-light);
+  margin: 8px 0;
+  /* 描述上下间距 */
+  line-height: 20px;
+}
+
+.profile-media {
+  width: 100%;
+  text-align: left;
+  margin-top: 15px;
 }
 
 .profile-media-item {
-    margin: 24px 0;
-}
-
-.profile-media-icon img {
-    width: 14px;
-    height: 14px;
+  margin: 24px 0;
 }
 
 .profile-media-icon {
-    margin-right: 4px;
+  margin-right: 4px;
+}
+
+.profile-media-icon img {
+  width: 14px;
+  height: 14px;
 }
 
 .profile-media-name {
-    font-size: var(--font-size-small);
-    color: var(--color-text-light);
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  line-height: 14px;
 }
 
 .profile-media-value {
-    float: right;
-}
-
-.btn-profile {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    border: none;
-    font-size: var(--font-size-small);
-    font-weight: 500;
-    border-radius: var(--btn-border-radius);
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-.btn-profile:hover {
-    opacity: 0.8;
+  float: right;
 }
 
 .btn-edit-profile {
-    background-color: var(--color-white);
-    color: var(--color-text);
+  background-color: var(--color-white);
+  color: var(--color-text);
 }
 
 .btn-create-post {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-profile {
+  width: 100%;
+  /* 按钮宽度 */
+  padding: 10px;
+  /* 按钮内边距 */
+  font-weight: 500;
+  height: 40px;
+  /* 按钮高度 */
+  border: none;
+  /* 去掉边框 */
+  border-radius: var(--btn-border-radius);
+  /* 按钮圆角 */
+  cursor: pointer;
+  /* 鼠标悬停样式 */
+  margin-top: 15px;
+  /* 按钮顶部间距 */
+  font-size: var(--font-size-small);
+  /* 按钮字体大小 */
+}
+
+.btn-profile:hover {
+  opacity: 0.8;
+  /* 按钮悬停透明度 */
+}
+
+.btn-edit-profile:hover {
+  color: var(--color-text);
 }
