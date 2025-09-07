@@ -1,12 +1,15 @@
-import { getPosts } from "../database/database.js";
+import { getPosts, deletePost, getPostById } from "../database/database.js";
 
+// 获取容器
 const postsContainer = document.getElementById("posts-container");
 
 export const refreshPostData = async () => {
-    const posts = await getPosts();
-    if (posts.length > 0) {
-        posts.forEach((post) => {
-            const postHTML = `
+  const posts = await getPosts();
+  // console.log("posts", posts);
+  if (posts.length > 0) {
+    // 遍历数据并生成HTML
+    posts.forEach((post) => {
+      const postHTML = `
                 <div class="post">
                     <div class="post-header">
                         <!-- 用户头像 -->
@@ -28,8 +31,69 @@ export const refreshPostData = async () => {
                     </div>
                 </div>
             `;
+      postsContainer.innerHTML += postHTML;
+    });
+  }
+};
 
-            postsContainer.innerHTML += postHTML;
-        });
-    }
+export const bindContentCardButtons = async () => {
+  const editPostButton = document.querySelectorAll(".post-edit-btn");
+  const removePostButton = document.querySelectorAll(".post-remove-btn");
+  const deletePostModal = document.getElementById("delete-post-modal");
+
+  const modal = document.getElementById("edit-post-modal");
+
+  const postText = document.getElementById("post-text");
+  const postImage = document.getElementById("post-file-image");
+
+  const postModalTitle = document.getElementById("post-modal-title");
+
+  // 绑定编辑按钮
+  editPostButton.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const postId = button.attributes["data-post-id"].value;
+      console.log("Edit post", postId);
+
+      const postData = await getPostById(postId);
+      modal.style.display = "flex";
+      // inset value
+      postText.value = postData.content;
+      postImage.src = postData.image;
+      postImage.style.display = "block";
+
+      // update title
+      postModalTitle.innerText = "Edit Post";
+      postModalTitle.setAttribute("data-post-id", postId);
+    });
+  });
+
+  // 绑定删除按钮
+  removePostButton.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const postId = button.attributes["data-post-id"].value;
+
+      deletePostModal.style.display = "flex";
+      const close = document.getElementById("delete-post-close");
+      const cancel = document.getElementById("delete-post-cancel");
+      const confirm = document.getElementById("delete-post-delete");
+
+      close.addEventListener("click", function () {
+        deletePostModal.style.display = "none";
+      });
+
+      cancel.addEventListener("click", function () {
+        deletePostModal.style.display = "none";
+      });
+
+      confirm.addEventListener("click", async () => {
+        await deletePost(postId);
+        deletePostModal.style.display = "none";
+
+        // 重新加载数据
+        setTimeout(() => {
+          location.reload();
+        }, 500); // 延迟 0.5 秒
+      });
+    });
+  });
 };

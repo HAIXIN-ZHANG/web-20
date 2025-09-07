@@ -1,122 +1,102 @@
-/* @media screen and  (max-width: 1200px) {
-    .profile-modal {
-        height: 646px;
-        overflow: auto;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .profile-modal {
-        height: 972px;
-    }
-} */
-
-
 .profile-modal {
-    height: 646px;
-    overflow: auto;
-}
-
-.profile-modal-header {
-    width: 100%;
-    height: 20px;
+  /* height: 972px; */
+  height: 646px;
+  overflow: auto;
 }
 
 /* Close button styles */
 .close {
-    cursor: pointer;
-    color: #aaa;
-    width: 10px;
-    height: 10px;
-    float: right;
-    /* Position close button to the right */
+  cursor: pointer;
+  color: #aaa;
+  width: 10px;
+  height: 10px;
+  float: right;
+  /* Position close button to the right */
 }
 
 .close:hover {
-    color: black;
-    /* Change color on hover */
+  color: black;
+  /* Change color on hover */
 }
 
 .close img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .modal-content-title {
-    font-size: var(--font-size-medium);
-    font-weight: bold;
-    float: left;
+  font-size: var(--font-size-medium);
+  font-weight: bold;
 }
 
 .profile-modal-input {
-    box-sizing: border-box;
-    height: 54px;
-    border: solid 1px var(--color-border);
-    margin-top: 20px;
-    border-radius: var(--common-border-radius);
-    background-color: var(--color-white);
-    padding: 6px 12px 0 12px;
-    text-align: left;
-}
-
-.profile-modal-input label {
-    width: 100%;
-    font-size: var(--font-size-xsmall);
-    line-height: 12px;
-    color: var(--color-text-label);
-}
-
-.profile-modal-input input {
-    width: 100%;
-    color: var(--color-text);
-    font-size: var(--font-size-small);
-    font-weight: 500;
-    border: none;
-    line-height: 14px;
-    overflow: hidden;
+  box-sizing: border-box;
+  height: 54px;
+  border: solid 1px var(--color-border);
+  margin-top: 20px;
+  border-radius: var(--common-border-radius);
+  background-color: var(--color-white);
+  padding: 6px 12px 0 12px;
 }
 
 .profile-modal-input-introduction {
-    height: 116px;
-    box-sizing: border-box;
+  height: 116px;
+  box-sizing: border-box;
+}
+
+/* Input styles */
+.profile-modal-input label {
+  font-size: var(--font-size-xsmall);
+  color: var(--color-text-label);
+  width: 100%;
+  line-height: 12px;
+}
+
+.profile-modal-input input {
+  margin-top: 6px;
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+  border: none;
+  font-weight: 500;
+  width: 100%;
+  line-height: 14px;
+  overflow: hidden;
 }
 
 #profile-introduction {
-    width: 100%;
-    margin-top: 6px;
-    height: 60px;
-    border: none;
-    overflow: auto;
+  margin-top: 6px;
+  width: 100%;
+  height: 60px;
+  border: none;
+  overflow: scroll;
 }
 
-
 .profile-modal-avatar {
-    text-align: center;
+  text-align: center;
 }
 
 #upload-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 #icon-upload {
-    position: fixed;
-    top: 60px;
-    left: 225px;
-    background-color: rgba(0, 0, 0, 0.45);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+  position: fixed;
+  top: 60px;
+  left: 225px;
+  background-color: rgba(0, 0, 0, 0.45);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
 }
 
 #icon-upload img {
-    width: 15px;
-    height: 15px;
-    position: relative;
-    top: 11px;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 11px;
 }
-
 #file-input {
-    display: none;
+  display: none; /* 隐藏文件输入框 */
 }
